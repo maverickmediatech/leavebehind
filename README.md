@@ -5,7 +5,7 @@ The behaviour: The links will open their href address in a new tab while in the 
 
 
 # INSTRUCTIONS
-Place the following lines within the <head></head> tags of the site replacing media net’s script (both: head and html tags)
+## Place the following lines within the <head></head> tags of the site replacing media net’s script (both: head and html tags)
 ```
 <script src="https://domain.com/leavebehind/dist/leavebehind.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -25,9 +25,9 @@ Place the following lines within the <head></head> tags of the site replacing me
     lbh.load({'acu_id':dividnumber});
 </script>
 ```
-Replace dividnumber by the div id found in the original medianet script 
+## Replace dividnumber by the div id found in the original medianet script 
 
-## Within the ```<head></head>``` tags
+### Within the ```<head></head>``` tags
 ```
 <script src="https://csearchtopics101.akamaized.net/dacu.js?cid=8CU37R3V6" async="async"></script>
 <script type="text/javascript">
@@ -44,7 +44,7 @@ Replace dividnumber by the div id found in the original medianet script
         </script>
 ```
 
-## Within the ```<body></body>``` tags
+### Within the ```<body></body>``` tags
 ```
 <div id="dividnumber" style="">
     <script type="text/javascript">
