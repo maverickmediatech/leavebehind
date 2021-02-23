@@ -15,7 +15,7 @@ lbh.load({tracklink:"https://financejournal.club/view/nGAFW7l4ZoyXsULpihQsULpnFP
 
 2. Add the class “lbh” to all links that need to implement the functionality.
 
-# DEV Notes
+# DEV
 
 1. public folder is /dist
 2. npm-install && grunt will generate dist/leavebehind.min.js
