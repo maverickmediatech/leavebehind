@@ -6,7 +6,6 @@ The behaviour: The links will open their href address in a new tab while in the 
 
 # INSTRUCTIONS
 1. Place the following lines within the <head></head> tags of the site 
-2. 
 ```
 <script src="https://domain.com/leavebehind/dist/leavebehind.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
