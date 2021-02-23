@@ -357,7 +357,7 @@ acu_chnm = "";//Used to specify the channel name
 acu_chnm2=""; // Used to specify the channel 2 name
 acu_chnm3=" "; // Used to specify the channel 3 name
 acu_misc = {};
-acu_misc.query = ';
+acu_misc.query = '';
 acu_misc.zip= '<zip>'; //Used to specify the zip
 acu_misc.score='<credit score>'; //Used to specify the credit score/rating
 
