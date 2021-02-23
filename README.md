@@ -62,7 +62,10 @@ Replace dividnumber by the div id found in the original medianet script
 Add the class “lbh” to all links that need to implement the functionality.
 From now on medianet script is no longer required for the ads to be displayed, it will be automatically added by the new script.
 
+# DEV
 
+## public folder is /dist
+## npm-install && grunt will generate dist/leavebehind.min.js
 
 
 # REQUIREMENTS
