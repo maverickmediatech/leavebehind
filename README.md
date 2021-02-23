@@ -1,10 +1,10 @@
 
-#DESCRIPTION
+# DESCRIPTION
 Replace the default behaviour of all links in a site marked with a specific css class.
 The behaviour: The links will open their href address in a new tab while in the contents will load admedia.net script in the current existing page
 
 
-#INSTRUCTIONS
+# INSTRUCTIONS
 Place the following lines within the <head></head> tags of the site replacing media net’s script (both: head and html tags)
 ```
 <script src="https://scripts.fastnclick.com/lbehind.js" crossorigin="anonymous"></script>
@@ -65,17 +65,18 @@ From now on medianet script is no longer required for the ads to be displayed, i
 
 
 
-#REQUIREMENTS
+# REQUIREMENTS
 In order for the script to work the following structure is required in the target site.
 ```
 <html>
-<head></head>
-<body>
-*<header></header>
-*<section></section><section></section>
-*<div></div><div></div>
-*<footer></footer><footer></footer>
-</body>
-*<footer></footer>
+    <head>    </head>
+    <body>
+        *<header></header>
+        *<section></section><section></section>
+        *<div></div><div></div>
+        *<footer></footer><footer></footer>
+    </body>
+    *<footer></footer>
 </html>
 ```
+* are optional html tags that will be hidden
