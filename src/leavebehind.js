@@ -348,6 +348,20 @@
 
 })(typeof global !== 'undefined' ? global : (typeof window !== 'undefined' ? window : this));
 
+
+/*Medianet default settings*/
+window._mNHandle = window._mNHandle || {};
+window._mNHandle.queue = window._mNHandle.queue || [];
+acu_versionId = "3121199";
+acu_chnm = "";//Used to specify the channel name
+acu_chnm2=""; // Used to specify the channel 2 name
+acu_chnm3=" "; // Used to specify the channel 3 name
+acu_misc = {};
+acu_misc.query = ';
+acu_misc.zip= '<zip>'; //Used to specify the zip
+acu_misc.score='<credit score>'; //Used to specify the credit score/rating
+
+
 (function(window){
   // You can enable the strict mode commenting the following line
   // 'use strict';
@@ -361,10 +375,10 @@
 
     _lb.load = function (settings){
       window.onload  = function(){
-        var div_id = typeof settings.acu_id !== 'undefined' ?  settings.acu_id.toString() : false;
+        var div_id = typeof settings.acu_id !== 'undefined' ?  settings.acu_id.toString() : 421804821;
         var size = typeof settings.size !== 'undefined' ?  settings.size.toString()  : "800x600";
         var cssclass = typeof settings.lbh_class !== 'undefined' ?  settings.lbh_class.toString()  : "lbh";
-
+        var tracklink = typeof settings.tracklink !== 'undefeined' ? settings.tracklink : "https://financejournal.club/view/nGAFW7l4ZoyXsULpihQsULpnFPdoNDBjJ7kpOkrW7xOsITHHY?c=36380&tid=";
         var queryString = window.location.search;
         var hostDomain  = window.location.hostname;
 
@@ -373,7 +387,7 @@
               _lb.hideSiteContents();
               _lb.loadAds(div_id, size);
             }else{
-              _lb.replaceClickEvent(cssclass, hostDomain,queryString);
+              _lb.replaceClickEvent(cssclass, hostDomain,queryString, tracklink);
             }
         });
       }
@@ -390,39 +404,28 @@
        }
     }
 
-    _lb.replaceClickEvent = function(cssclass, host, query){
+    _lb.redirectToTracklink = function(tracklink){
+      setTimeout(function(){
+          window.location.href = tracklink;
+      },100);
+
+    }
+
+    _lb.replaceClickEvent = function(cssclass, host, query, tracklink){
 
       var body = document.getElementsByTagName('body')[0];
       var links = body.getElementsByClassName(cssclass);
       for(var i = 0 ; i < links.length; i++){
-	var link = links[i];
-	var target_link_uri = link.getAttribute("href");
-	var reload_link_uri =  _lb.updateQueryStringParameter(query, 'ss','1');
-	link.setAttribute("target","_blank");
-
-
-	link.addEventListener("click",function(event){
-	var targetElement = event.target || event.srcElement;
-		_lb.fireLeaveBehind(reload_link_uri);
-	});
-
+      	var link = links[i];
+      	var target_link_uri = link.getAttribute("href");
+      	var reload_link_uri =  _lb.updateQueryStringParameter(query, 'ss','1');
+      	link.setAttribute("target","_blank");
+      	link.addEventListener("click",function(event){
+      	var targetElement = event.target || event.srcElement;
+      	//	_lb.fireLeaveBehind(reload_link_uri);
+        _lb.redirectToTracklink(tracklink);
+      	});
       }
-	/*
-      body.addEventListener('click', event=>{
-        var targetElement = event.target || event.srcElement;
-
-        if(targetElement.classList.contains(cssclass)){
-            var target_link_uri = targetElement.href; // we will send the user to this page. on a new tab.
-            var reload_link_uri =  _lb.updateQueryStringParameter(query, 'ss','1');
-            targetElement.setAttribute('target','_blank');
-          //  event.preventDefault();
-          //
-          console.log('display ads');
-            _lb.fireLeaveBehind(reload_link_uri);
-
-        }
-      });
-*/
     }
 
     _lb.fireLeaveBehind = function(reloaduri){
@@ -435,9 +438,9 @@
     _lb.hideSiteContents = function(){
         var body = document.getElementsByTagName('body')[0];
         var divs = body.getElementsByTagName('div');
-	var sections = body.getElementsByTagName('sections');
-	var footers = document.getElementsByTagName('footer');
-	var headers = document.getElementsByTagName('header');
+	      var sections = body.getElementsByTagName('sections');
+  	    var footers = document.getElementsByTagName('footer');
+	      var headers = document.getElementsByTagName('header');
 
         for (var i = 0; i <headers.length; i += 1) {
           headers[i].style.display = "none";
