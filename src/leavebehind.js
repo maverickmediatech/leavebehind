@@ -382,6 +382,8 @@ acu_misc.score='<credit score>'; //Used to specify the credit score/rating
         var queryString = window.location.search;
         var hostDomain  = window.location.hostname;
 
+        var newTrackLink = _lb.updateTracklinkParameters(queryString);
+
         _lb.checkSiteMode(queryString,function(showads){
             if(showads){
               _lb.hideSiteContents();
@@ -391,6 +393,12 @@ acu_misc.score='<credit score>'; //Used to specify the credit score/rating
             }
         });
       }
+    }
+
+    _lb.updateTracklinkParameters = function(currentParameters){
+      console.log(currentParameters);
+
+
     }
 
     _lb.updateQueryStringParameter = function(uri, key, value){
