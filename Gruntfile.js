@@ -14,7 +14,8 @@ module.exports = function (grunt) {
             dist:
                 {
                 src: [
-                    "src/leavebehind.js",
+                    "node_modules/url-search-params-polyfill",
+                    "src/leavebehind.js"
                     ],
                     dest: 'dist/leavebehind.min.js',
                   }
