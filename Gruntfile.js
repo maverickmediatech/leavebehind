@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                     "node_modules/url-search-params-polyfill",
                     "src/leavebehind.js"
                     ],
-                    dest: 'dist/leavebehind.min.js',
+                    dest: 'dist/leavebehind.js',
                   }
         },
         uglify: {
