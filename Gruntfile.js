@@ -7,14 +7,14 @@ module.exports = function (grunt) {
                 files: [
                     'src/**/*.js'
                 ],
-                tasks: ['copy:main']
+                tasks: ['clean','concat']
             }
         },
         concat : {
             dist:
                 {
                 src: [
-                    "node_modules/url-search-params-polyfill",
+                    "node_modules/url-search-params-polyfill/index.js",
                     "src/leavebehind.js"
                     ],
                     dest: 'dist/leavebehind.js',
@@ -49,11 +49,9 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.registerTask('default', ['clean', 'concat','uglify']);
-/*
-    grunt.registerTask('build', ['copy:main','copy:nodemodules','sass','clean','concat','replace']);
-    grunt.registerTask('dev', ['copy:main','sass','clean','concat','replace']);
-    grunt.registerTask('default', ['dev', 'watch']);
-    grunt.registerTask('minify', ['build','uglify','cssmin','htmlmin']);
-    */
+
+    grunt.registerTask('watch',['default', 'watch']);
+    grunt.registerTask('default', ['clean', 'concat']);
+    grunt.registerTask('min', ['clean', 'concat','uglify']);
+
 }
